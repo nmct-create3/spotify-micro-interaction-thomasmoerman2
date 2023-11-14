@@ -63,25 +63,11 @@ body {}
 }
 
 /*
-    Object: Flow
-    ---
-    Only add margin top if elements are adjacent
-*/
-
-.flow>*+* {
-    margin-top: 1.5rem;
-}
-
-/*
-    Icons
-*/
-
-/*
     Toggle button
 */
 
 /*
-    Card
+    Album
 */
 
 /*
