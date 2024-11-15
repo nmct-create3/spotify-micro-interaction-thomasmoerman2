@@ -15,7 +15,4 @@ export default defineConfig({
   build: {
     outDir: "dist",
   },
-  plugins: [
-    // Add your plugins here
-  ],
 });

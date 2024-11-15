@@ -1,37 +1,51 @@
 @import "https://unpkg.com/open-props/easings.min.css";
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
 
 :root {
-    /* spotify colors*/
-    --spotify-green: #1ed760;
-    --spotify-black: #121212;
-    --spotify-white: #ffffff;
-    --spotify-grey: #b3b3b3;
-    --spotify-darkGrey: #222222;
+  /* spotify colors*/
+  --spotify-green: #1ed760;
+  --spotify-black: #121212;
+  --spotify-white: #ffffff;
+  --spotify-grey: #b3b3b3;
+  --spotify-darkGrey: #222222;
 }
 
 /* reset */
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-size: 1rem;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 1rem;
 }
 
 img,
 svg {
-    display: block;
-    max-width: 100%;
-    height: auto;
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 /* global page styles */
 
-html {}
+html {
+  font-size: 16px;
+  font-family: "Manrope", sans-serif;
+  line-height: 1.5;
+  color: var(--spotify-white);
+  background-color: var(--spotify-black);
+  width: 100%;
+  height: 100vh;
+}
 
 /* center everything */
 
-body {}
+body {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
 
 /*
     Object: Button reset
@@ -40,26 +54,26 @@ body {}
 */
 
 .button-reset {
-    border: none;
-    margin: 0;
-    padding: 0;
-    width: auto;
-    overflow: visible;
-    background: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+  background: transparent;
 
-    /* inherit font & color from ancestor */
-    color: inherit;
-    font: inherit;
+  /* inherit font & color from ancestor */
+  color: inherit;
+  font: inherit;
 
-    /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
-    line-height: normal;
+  /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+  line-height: normal;
 
-    /* Corrects font smoothing for webkit */
-    -webkit-font-smoothing: inherit;
-    -moz-osx-font-smoothing: inherit;
+  /* Corrects font smoothing for webkit */
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
 
-    /* Corrects inability to style clickable `input` types in iOS */
-    -webkit-appearance: none;
+  /* Corrects inability to style clickable `input` types in iOS */
+  -webkit-appearance: none;
 }
 
 /*
@@ -70,10 +84,100 @@ body {}
     Album
 */
 
+.album {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 400px;
+  height: auto;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: var(--spotify-darkGrey);
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+}
+
+.album__img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -o-border-radius: 0.5rem;
+}
+
+.album__header {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "title action"
+    "artist action";
+  gap: 0px;
+  position: relative;
+}
+
+.album__title {
+  grid-area: title;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.album__artist {
+  grid-area: artist;
+  font-size: 1rem;
+  font-weight: 200;
+}
+
+.album__action {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 2rem;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  grid-area: action;
+}
+
+.toggle__icon {
+  width: 100%;
+  height: auto;
+  display: block;
+  right: 0;
+  bottom: 0;
+  fill: var(--spotify-green);
+  transform: rotate(0deg);
+  transition: all 250ms var(--ease-elastic-in-out-2);
+  -webkit-transition: all 250ms var(--ease-elastic-in-out-2);
+  -moz-transition: all 250ms var(--ease-elastic-in-out-2);
+  -ms-transition: all 250ms var(--ease-elastic-in-out-2);
+  -o-transition: all 250ms var(--ease-elastic-in-out-2);
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+}
+
+.icon--check {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
 /*
     Utitlities
 */
+.hidden {
+  opacity: 0;
+  transform: rotate(40deg);
+  -webkit-transform: rotate(40deg);
+  -moz-transform: rotate(40deg);
+  -ms-transform: rotate(40deg);
+  -o-transform: rotate(40deg);
+}
 
 .color-grey {
-    color: var(--spotify-grey);
+  color: var(--spotify-grey);
 }
