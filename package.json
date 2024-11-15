@@ -1,0 +1,16 @@
+{
+  "name": "spotify-micro-interaction-thomasmoerman2",
+  "version": "1.0.0",
+  "description": "These are the startfiles for the spotify micro interaction exercise",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "vite": "^5.4.11"
+  }
+}
